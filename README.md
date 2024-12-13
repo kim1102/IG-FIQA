@@ -11,7 +11,6 @@ arXiv: https://arxiv.org/abs/2403.08256
 
 ```python
 import torch
-from backbone import iresnet50
 from losses import ArcFace, CR_FIQA
 
 # intra-class variance weights for each classes

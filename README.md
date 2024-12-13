@@ -11,9 +11,6 @@ import torch
 from backbone import iresnet50
 from losses import ArcFace, CR_FIQA
 
-# Loss definition
-CELoss = torch.nn.CrossEntropyLoss()
-
 # intra-class variance weights for each classes
 label_weight = torch.ones(trainset.class_num)
 

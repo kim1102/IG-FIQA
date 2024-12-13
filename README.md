@@ -26,8 +26,8 @@ for epoch in range(0, end_epoch):
     CR_loss, ccs, nnccs = CR_FIQA(augmented_img, label)
     with torch.no_grad():
       label_weight[label] = (loss_momentum * label_weight[label]) + ((1 - loss_momentum) * ccs)
-      normalized_label_weight = (label_weight[label] - torch.mean(label_weight)) / (torch.std(label_weight) + 1e-6)
-      normalized_weight = 1 + torch.clip(normalized_label_weight, -1.0, 0.0)
+      instant_label_weight = (label_weight[label] - torch.mean(label_weight)) / (torch.std(label_weight) + 1e-6)
+      normalized_weight = 1 + torch.clip(instant_label_weight, -1.0, 0.0)
 
     IG_loss = torch.mean(CR_loss * normalized_weight)
     total_loss = FR_loss + (alpha*IG_loss) # alpha = 10.0

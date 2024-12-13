@@ -20,9 +20,9 @@ for epoch in range(0, end_epoch):
   for learning_iter, (img, label) in enumerte(train_loader):
     # Loss calculation for Backbone update
     FR_loss = ArcFace(img, label)
-    augmented_img  = augment(img)
   
     # Loss calculation for Regression layer update
+    augmented_img  = augment(img)
     CR_loss, ccs, nnccs = CR_FIQA(augmented_img, label)
     with torch.no_grad():
       label_weight[label] = (loss_momentum * label_weight[label]) + ((1 - loss_momentum) * ccs)
@@ -38,5 +38,5 @@ for epoch in range(0, end_epoch):
 >## Reference
 
 The code for backbone network and loss can be found in the official Insightface repository and CR-FIQA.
-https://github.com/deepinsight/insightface
-https://github.com/fdbtrs/CR-FIQA
+ArcFace: https://github.com/deepinsight/insightface
+CR-FIQA: https://github.com/fdbtrs/CR-FIQA

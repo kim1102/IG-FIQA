@@ -3,7 +3,7 @@
 >## Abstract
 In the realm of face image quality assesment (FIQA), method based on sample relative classification have shown impressive performance. However, the quality scores used as pseudo-labels assigned from images of classes with low intra-class variance could be unrelated to the actual quality in this method. To address this issue, we present IG-FIQA, a novel approach to guide FIQA training, introducing a weight parameter to alleviate the adverse impact of these classes. This method involves estimating sample intra-class variance at each iteration during training, ensuring minimal computational overhead and straightforward implementation. Furthermore, this paper proposes an on-the-fly data augmentation methodology for improved generalization performance in FIQA. On various benchmark datasets, our proposed method, IG-FIQA, achieved novel state-of-the-art (SOTA) performance.
 arXiv: https://arxiv.org/abs/2403.08256
-<img src="assets/main_figure.png"/>
+<img src="main_figure.png"/>
 
 >## Pseudo-code (Pytorch)
 
@@ -39,5 +39,7 @@ for epoch in range(0, end_epoch):
 >## Reference
 
 The code for backbone network and loss can be found in the official Insightface repository and CR-FIQA.
+
 ArcFace: https://github.com/deepinsight/insightface
+
 CR-FIQA: https://github.com/fdbtrs/CR-FIQA

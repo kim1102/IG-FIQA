@@ -37,6 +37,9 @@ for epoch in range(0, end_epoch):
     total_loss.backward()
 ```
 
+>## Pretrained model
+
+Pretrained model for IG-FIQA(S) can be found in here: https://drive.google.com/file/d/16VTm2HJDC1Llo_ROAl1FpBh2G0L6jJ0c/view?usp=drive_link
 
 >## Reference
 
